@@ -25,7 +25,7 @@ resource "kubernetes_pod_v1" "jenkinspod" {
     volume {
       host_path {
         path = "/var/run/"
-        
+
       }
       name = "docker-demone"
     }

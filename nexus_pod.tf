@@ -60,9 +60,9 @@ resource "kubernetes_service" "nexussvcclusterip" {
     }
     session_affinity = "ClientIP"
     port {
-      port = 8082
-      target_port = 8082
-      name = "http"
+      port        = 8801
+      target_port = 8801
+      name        = "http"
     }
     type = "ClusterIP"
   }
