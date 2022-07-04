@@ -1,13 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('CI') {
+        stage('CD') {
             steps {
-            withCredentials([usernamePassword(credentialsId: 'docker-iamge' , usernameVariable: 'docker_username', passwordVariable: 'docker_pass')]) {
-               sh """
-               docker build  -t 13689/nodejsapp:latest .
-               docker login -u ${docker_username} -p ${docker_pass}
-    		   docker push 13689/nodejsapp:latest
+            withCredentials([usernamePassword(credentialsId: 'nexus-iamge' , usernameVariable: 'nexus__username', passwordVariable: 'nexus_pas             s')]) 
+             {        
+                sh """
+               kubectl apply -f app.yaml
                
                
                """
@@ -15,12 +14,5 @@ pipeline {
             }
         }
 
-        stage('CD') {
-            steps {
-               sh """
-               docker run -p 3000:3000 -d 13689/nodejsapp:latest
-               """
-            }
-        }
     }
 }
