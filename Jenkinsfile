@@ -7,6 +7,7 @@ pipeline {
              {        
                 sh """
                docker pull 10.108.235.232:8801/repository/docker-repo/nodejsapp:latest
+               kubectl delete -n dev deployment nodejs-deployment
                kubectl create -f app.yaml
                     
                
