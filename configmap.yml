@@ -5,6 +5,8 @@ metadata:
   name: db-secret
   namespace: dev
 data:
-  MYSQL_DATABASE: bm9kZWpzYXBw
+  MYSQL_DATABASE: bXlkYg==
   MYSQL_ROOT_PASSWORD: cm9vdDEyMzQ=
+  MYSQL_PASSWORD: cm9vdDEyMzQ=
+  MYSQL_USER: YW1s 
 

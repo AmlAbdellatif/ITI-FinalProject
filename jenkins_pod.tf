@@ -29,6 +29,8 @@ resource "kubernetes_pod_v1" "jenkinspod" {
       }
       name = "docker-demone"
     }
+    
+    service_account_name = "jenkins-service-account" 
   }
 
 }
